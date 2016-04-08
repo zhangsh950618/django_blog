@@ -27,7 +27,7 @@ TEMPLATES = [
     },
 ]
 
-ALLOWED_HOSTS = ["foofish.net"]
+ALLOWED_HOSTS = ["zhangshaohua.cc"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -65,7 +65,7 @@ STATICFILES_FINDERS = (
 )
 ROOT_URLCONF = 'urls'
 
-WSGI_APPLICATION = 'wsgi.application'
+WSGI_APPLICATION = 'django_blog.wsgi.application'
 
 DATABASES = {
     'default': {
