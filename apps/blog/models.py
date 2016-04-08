@@ -45,7 +45,7 @@ class Blog(models.Model):
     def get_absolute_url(self):
         return reverse('blog:blog_detail', args=(self.id, self.link))
 
-    def __str__(self):
+    def __unicode__(self):
         return self.title
 
 
@@ -58,7 +58,7 @@ class Category(models.Model):
     class Meta:
         ordering = ['title', ]
 
-    def __str__(self):
+    def __unicode__(self):
         return self.title
 
 
@@ -72,5 +72,5 @@ class Tag(models.Model):
         self.title = re.sub("\s", "", self.title)
         super(Tag, self).save(*args, **kwargs)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.title
