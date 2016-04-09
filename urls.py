@@ -31,5 +31,5 @@ urlpatterns = patterns('',
                        # url(r'^baidu_verify_3ymtDfPE09.html',
                        #     lambda r: HttpResponse("3ymtDfPE09", content_type="text/plain"), name='baidu'),
                        url(r'^rss/', LatestPosts(), name='feeds'),
-
+                       url(r'^baidu_verify_2qMRLxUJ0E.html$', TemplateView.as_view(template_name="baidu_verify_2qMRLxUJ0E.html"), name='about'),
                        )
