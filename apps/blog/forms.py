@@ -11,7 +11,7 @@ from pagedown.widgets import AdminPagedownWidget
 
 
 class BlogForm(ModelForm):
-    content = CharField(label='内容', widget=AdminPagedownWidget())
+    content = CharField(label='内容', widget=Textarea())
     snippet = CharField(label='摘要',
                         widget=Textarea(attrs={'cols': 85, 'rows': 7}),
                         required=False)

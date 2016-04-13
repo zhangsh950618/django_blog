@@ -13,10 +13,8 @@
 
 
 {% block body %}
-
 <main class="content" role="main">
     <article class="post">
-
         <header class="post-header">
             <h2 class="post-title">{{blog.title}}</h2>
             <section class="post-meta">
@@ -31,8 +29,7 @@
         </header>
 
         <section class="post-content">
-            {{blog.content | md1}}
-
+            <div id = "markdown-body">{{blog.content}}</div>
             <details open="">
                 <summary>原文链接：<a href="{{blog.get_absolute_url}}" rel="author">{{blog.title}}</a>，转发请注明来自<a
                         href="http://zhangshaohua.cc">Maybe的博客</a>！
@@ -58,7 +55,10 @@
 
 
 </main>
-
+<script>
+  var dom =$("#markdown-body"),value=dom.text(); 
+  dom.html(marked(value),{renderer:new marked.Renderer()}); 	
+</script>
 <!-- <aside class="read-next"> -->
 <!--     <a class="read-next-story " href="{{next_post.get_absolute_url}}"> -->
 <!--         <section class="post"> -->

@@ -60,5 +60,8 @@
     {% endif %}
 </main>
 
-
+<script>
+  var dom =$(".read-more"),value=dom.text(); 
+  dom.html(marked(value),{renderer:new marked.Renderer()}); 	
+</script>
 {% endblock %}
