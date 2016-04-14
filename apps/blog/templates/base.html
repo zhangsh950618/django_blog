@@ -19,33 +19,19 @@
     <meta property='og:url' content='http://zhangshaohua.cc'/>
     <meta property='og:site_name' content='Maybe!'s Blog'/>
     <link rel="stylesheet" href="http://apps.bdimg.com/libs/highlight.js/9.1.0/styles/github.min.css">
+    <script type="text/javascript" charset="utf-8" src="{% static 'dist/javascripts/jquery-2.1.3.min.js' %}"></script>
+    <script type="text/javascript" charset="utf-8" src="{% static 'dist/javascripts/thinker-md.vendor.min.js' %}"></script>
     <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
     {% compress css %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/screen.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/font.css' %}"/>
-    <script type="text/javascript" charset="utf-8" src="{% static 'dist/javascripts/jquery-2.1.3.min.js' %}"></script>
-    <script type="text/javascript" charset="utf-8" src="{% static 'dist/javascripts/thinker-md.vendor.min.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'dist/stylesheets/thinker-md.vendor.css' %}" />
-    <link rel="stylesheet" href="{% static 'dist/emoji/nature.css' %}" />
-    <link rel="stylesheet" href="{% static 'dist/emoji/object.css' %}" />
-    <link rel="stylesheet" href="{% static 'dist/emoji/people.css' %}" />
-    <link rel="stylesheet" href="{% static 'dist/emoji/place.css' %}" />
+    <link rel="stylesheet" href="{% static 'dist/stylesheets/thinker-md.vendor.css' %}" /> 
+    <link rel="stylesheet" href="{% static 'dist/emoji/nature.css' %}" /> 
+    <link rel="stylesheet" href="{% static 'dist/emoji/object.css' %}" /> 
+    <link rel="stylesheet" href="{% static 'dist/emoji/people.css' %}" /> 
+    <link rel="stylesheet" href="{% static 'dist/emoji/place.css' %}" /> 
     {% endcompress %}
 
-    <style>
-        pre {
-        word-wrap: normal;
-        -moz-hyphens: none;
-        -ms-hyphens: none;
-        -webkit-hyphens: none;
-        hyphens: none;
-        font-size: 0.7em;
-        line-height: 1.3em;
-        }
-        pre code, pre tt {
-        white-space: pre;
-        }
-    </style>
 </head>
 <body class="{% block body_class %}{% endblock %} nav-closed">
 
@@ -86,17 +72,18 @@
 {% compress js %}
 <script type="text/javascript" src="{% static 'js/jquery.fitvids.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+
 {% endcompress %}
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<!-- <script> -->
+<!--   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ -->
+<!--   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), -->
+<!--   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) -->
+<!--   })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); -->
 
-  ga('create', '{{ga_id}}', 'auto');
-  ga('send', 'pageview');
+<!--   ga('create', '{{ga_id}}', 'auto'); -->
+<!--   ga('send', 'pageview'); -->
 
-</script>
+<!-- </script> -->
 
 </body>
 </html>
