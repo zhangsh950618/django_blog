@@ -1,0 +1,7 @@
+- sudo apt-get install python-pip
+- sudo pip install virtualenv
+- sudo pip install virtualenvwrapper
+- git clone git@github.com:zhangsh950618/django_blog.git && cd django_blog
+- mkvirtualenv django_blog
+- pip install -r requirements/base.txt
+- python manage.py runserver
