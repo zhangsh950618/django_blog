@@ -45,7 +45,7 @@
 <script type="text/javascript" charset="utf-8" src="{% static 'public/javascripts/vendor/markdown/bootstrap-markdown.js' %}"></script>
 <!-- <script type="text/javascript" charset="utf-8" src="{% static 'public/javascripts/vendor/markdown/locale/bootstrap-markdown.zh.js' %}"></script> -->
 <script type="text/javascript" charset="utf-8" src="{% static 'public/javascripts/vendor/markdown/marked.js' %}"></script>
-<script type="text/javascript" charset="utf-8" src="{% static 'public/javascripts/vendor/markdown/he.js' %}"></script>
+<!-- <script type="text/javascript" charset="utf-8" src="{% static 'public/javascripts/vendor/markdown/he.js' %}"></script> -->
 <script type="text/javascript" charset="utf-8" src="{% static 'public/javascripts/vendor/markdown/to-markdown.js' %}"></script>
 <script type="text/javascript" charset="utf-8" src="{% static 'public/javascripts/vendor/markdown/jsHtmlToText.js' %}"></script>
 <script type="text/javascript" charset="utf-8" src="{% static 'public/javascripts/vendor/markdown/tab.js' %}"></script>
@@ -53,12 +53,12 @@
   var dom =$("#markdown-body"), value = dom.text();
   marked.setOptions({
       renderer: new marked.Renderer(),
-      gfm: true,
+      gfm: false,
       emoji: false,
       tables: false,
       breaks: false,
       pedantic: false,
-      sanitize: true,
+      sanitize: false,
       smartLists: false,
       smartypants: false,
       highlight: false,
