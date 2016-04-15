@@ -43,36 +43,25 @@
 <script type="text/javascript" charset="utf-8" src="{% static 'dist/javascripts/jquery-2.1.3.min.js' %}"></script>
 <script type="text/javascript" charset="utf-8" src="{% static 'public/javascripts/vendor/highlight/highlight.js' %}"></script>
 <script type="text/javascript" charset="utf-8" src="{% static 'public/javascripts/vendor/markdown/bootstrap-markdown.js' %}"></script>
-<script type="text/javascript" charset="utf-8" src="{% static 'public/javascripts/vendor/markdown/locale/bootstrap-markdown.zh.js' %}"></script>
+<!-- <script type="text/javascript" charset="utf-8" src="{% static 'public/javascripts/vendor/markdown/locale/bootstrap-markdown.zh.js' %}"></script> -->
 <script type="text/javascript" charset="utf-8" src="{% static 'public/javascripts/vendor/markdown/marked.js' %}"></script>
 <script type="text/javascript" charset="utf-8" src="{% static 'public/javascripts/vendor/markdown/he.js' %}"></script>
 <script type="text/javascript" charset="utf-8" src="{% static 'public/javascripts/vendor/markdown/to-markdown.js' %}"></script>
 <script type="text/javascript" charset="utf-8" src="{% static 'public/javascripts/vendor/markdown/jsHtmlToText.js' %}"></script>
 <script type="text/javascript" charset="utf-8" src="{% static 'public/javascripts/vendor/markdown/tab.js' %}"></script>
-<script type="text/javascript" charset="utf-8" src="{% static 'public/javascripts/vendor/markdown/config.js' %}"></script>
 <script>
   var dom =$("#markdown-body"), value = dom.text();
-  hljs.configure({useBR: false});
-  hljs.initHighlightingOnLoad();
   marked.setOptions({
       renderer: new marked.Renderer(),
       gfm: true,
       emoji: false,
-      tables: true,
+      tables: false,
       breaks: false,
       pedantic: false,
       sanitize: true,
-      smartLists: true,
+      smartLists: false,
       smartypants: false,
-      highlight: function (code, lang) {
-          try {
-              if (lang)
-                  return hljs.highlight(lang, code).value;
-          } catch (e) {
-              return hljs.highlightAuto(code).value;
-          }
-          return hljs.highlightAuto(code).value;
-      }
+      highlight: false,
   });
   dom.html(marked(value));
 </script>
