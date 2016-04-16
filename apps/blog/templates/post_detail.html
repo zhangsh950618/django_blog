@@ -42,7 +42,6 @@
         </footer>
     </article>
 </main>
-<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="http://libs.cdnjs.net/marked/0.3.2/marked.min.js"></script>
 <script>
 marked.setOptions({
@@ -55,7 +54,7 @@ marked.setOptions({
   smartLists: true,
   smartypants: false
 });
-var dom = $("#markdown-body"), value = dom.text();
-dom.html(marked(value));
+var dom = document.getElementById('markdown-body');
+dom.innerHTML = marked(dom.innerHTML);
 </script>
 {% endblock %}
