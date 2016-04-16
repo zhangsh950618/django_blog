@@ -1,11 +1,8 @@
 {% extends "base.html" %}
-{% load myapp_markup %}
 {% block description %}{{blog.snippet | truncatewords:50}}{%endblock%}
 {% block title %}{{blog.title}}{% endblock %}
 {% block body_class %} post-template {% endblock %}
-{% load staticfiles %}
 {% block head %}
-{% load compress %}
 <header class="main-header post-head no-cover">
     {% include "widget/main-nav.html" %}
 </header>
@@ -42,7 +39,7 @@
         </footer>
     </article>
 </main>
-<script src="http://libs.cdnjs.net/marked/0.3.2/marked.min.js"></script>
+<script src="http://7xt1y0.com2.z0.glb.clouddn.com/marked.min.js"></script>
 <script>
 marked.setOptions({
   renderer: new marked.Renderer(),

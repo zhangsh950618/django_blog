@@ -1,16 +1,11 @@
 {% extends "base.html" %}
-{% load myapp_markup %}
-
 {% block description %}Maybe!{% endblock%}
 {% block title %}Maybe!'s Blog{% endblock %}
 {% block body_class %} home-template {% endblock %}
-{% load staticfiles %}
 {% block head %}
-
-
-<header class="main-header tag-head " style="background-image: url({% static 'img/home-bg.jpg' %})">
+<header class="main-header tag-head " style="background-image: url(http://7xt1y0.com2.z0.glb.clouddn.com/home-bg.jpg)">
     <nav class="main-nav overlay clearfix">
-        
+
             <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
     </nav>
     <div class="vertical">
@@ -22,11 +17,7 @@
         </div>
     </div>
 </header>
-
-
 {% endblock %}
-
-
 {% block body %}
 <main id="content" class="content" role="main">
     {% for blog in blog_list %}
@@ -59,9 +50,4 @@
     </nav>
     {% endif %}
 </main>
-
-<script>
-  var dom =$(".read-more"),value=dom.text(); 
-  dom.html(marked(value),{renderer:new marked.Renderer()}); 	
-</script>
 {% endblock %}

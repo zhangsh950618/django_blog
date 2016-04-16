@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {% load staticfiles %}
-    {% load compress %}
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <title>{% block title %}{% endblock %}</title>
@@ -17,16 +15,11 @@
     <meta property='og:description' content='python,django,mysql'/>
     <meta property='og:url' content='http://zhangshaohua.cc'/>
     <meta property='og:site_name' content='Maybe!'s Blog'/>
-
     <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
-    {% compress css %}
-    <link rel="stylesheet" type="text/css" href="{% static 'css/screen.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/font.css' %}"/>
-    {% endcompress %}
-
+    <link rel="stylesheet" type="text/css" href="http://7xt1y0.com2.z0.glb.clouddn.com/font.css"/>
+    <link rel="stylesheet" type="text/css" href="http://7xt1y0.com2.z0.glb.clouddn.com/screen.css"/>
 </head>
 <body class="{% block body_class %}{% endblock %} nav-closed">
-
 <div class="nav">
     <h3 class="nav-title">Menu</h3>
     <a href="#" class="nav-close">
@@ -45,20 +38,13 @@
 <span class="nav-cover"></span>
 
 <div class="site-wrapper">
-
     {% block head %}{% endblock %}
     {% block body %}{% endblock %}
-
-
 </div>
 
-<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-
-{% compress js %}
-
-<script type="text/javascript" src="{% static 'js/jquery.fitvids.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
-{% endcompress %}
+<script src="http://7xt1y0.com2.z0.glb.clouddn.com/jquery.min.js"></script>
+<script type="text/javascript" src="http://7xt1y0.com1.z0.glb.clouddn.com/js%2Findex.js"></script>
+<script type="text/javascript" src="http://7xt1y0.com1.z0.glb.clouddn.com/js%2Fjquery.fitvids.js"></script>
 
 </body>
 </html>
