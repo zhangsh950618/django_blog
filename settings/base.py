@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     'apps.blog',
-    'marked',
+
 ]
 SITE_ID = 1
 MIDDLEWARE_CLASSES = (
