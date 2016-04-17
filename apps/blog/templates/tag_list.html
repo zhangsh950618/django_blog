@@ -52,14 +52,14 @@
     <div id="myCanvasContainer">
      <canvas width="500" height="500" id="myCanvas" >
       <p>Anything in here will be replaced on browsers that support the canvas element</p>
+      <div id="tags">
+        <ul>
+          {% for tag in tag_list %}
+          <li><a href="{% url 'blog:tag' tag.title %}">{{tag.title}}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
      </canvas>
-    </div>
-    <div id="tags">
-      <ul>
-        {% for tag in tag_list %}
-        <li><a href="{% url 'blog:tag' tag.title %}">{{tag.title}}</a></li>
-        {% endfor %}
-      </ul>
     </div>
 </main>
 {% endblock %}
