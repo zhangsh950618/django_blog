@@ -3,6 +3,7 @@
 {% block title %}{{blog.title}}{% endblock %}
 {% block body_class %} post-template {% endblock %}
 {% block head %}
+{% load myapp_markup %}
 <header class="main-header post-head no-cover">
     {% include "widget/main-nav.html" %}
 </header>
@@ -24,7 +25,7 @@
             </section>
         </header>
         <section class="post-content">
-            <div id = "markdown-body">{{ blog.content }}</div>
+            <div id = "markdown-body">{{ blog.content | md1 }}</div>
             <details open="">
                 <summary>原文链接：<a href="{{blog.get_absolute_url}}" rel="author">{{blog.title}}</a>，转发请注明来自<a
                         href="http://zhangshaohua.cc">Maybe的博客</a>！
@@ -39,7 +40,7 @@
         </footer>
     </article>
 </main>
-<script src="http://7xt1y0.com2.z0.glb.clouddn.com/marked.min.js"></script>
+<!-- <script src="http://7xt1y0.com2.z0.glb.clouddn.com/marked.min.js"></script>
 <script>
 var renderer = new marked.Renderer();
 renderer.code = function(code, lang) {
@@ -50,5 +51,5 @@ renderer.code = function(code, lang) {
 };
 var dom = document.getElementById('markdown-body');
 dom.innerHTML = marked(dom.innerHTML, { renderer: renderer });
-</script>
+</script> -->
 {% endblock %}
