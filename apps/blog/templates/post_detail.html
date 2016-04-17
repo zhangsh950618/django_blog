@@ -40,18 +40,16 @@
     </article>
 </main>
 <script src="http://7xt1y0.com2.z0.glb.clouddn.com/marked.min.js"></script>
+<script src="//libs.cdnjs.net/highlight.js/8.0/highlight.min.js"></script>
 <script>
-marked.setOptions({
-  renderer: new marked.Renderer(),
-  gfm: true,
-  tables: true,
-  breaks: false,
-  pedantic: false,
-  sanitize: true,
-  smartLists: true,
-  smartypants: false
-});
+var renderer = new marked.Renderer();
+renderer.code = function(code, lang) {
+  var language = lang && (' language-' + lang) || '';
+  return '<pre class="prettyprint' + language + '">'
+    + '<code>' + code.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</code>'
+    + '</pre>';
+};
 var dom = document.getElementById('markdown-body');
-dom.innerHTML = marked(dom.innerHTML);
+dom.innerHTML = marked(dom.innerHTML, { renderer: renderer });
 </script>
 {% endblock %}
