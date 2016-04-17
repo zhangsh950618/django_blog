@@ -27,30 +27,40 @@
 
 
 {% block body %}
+<script src="http://7xt1y0.com2.z0.glb.clouddn.com/tagcanvas.min.js"></script>
+<script type="text/javascript">
+   window.onload = function() {
+      TagCanvas.textColour = '#00f'
+      TagCanvas.textHeight = 25;
+      TagCanvas.initial = [0.3,-0.3];
+      TagCanvas.decel = 0.98;
+      TagCanvas.shadow = '#ccf';
+      TagCanvas.clickToFront = 600;
+      TagCanvas.fadeIn = 1000;
+      TagCanvas.outlineMethod = 'block';
+      TagCanvas.outlineColour = '#acf';
+      TagCanvas.maxSpeed = 0.03;
+      TagCanvas.minBrightness = 0.2;
+     try {
+       TagCanvas.Start('myCanvas','tags');
+     } catch(e) {
+       // something went wrong, hide the canvas container
+       document.getElementById('myCanvasContainer').style.display = 'none';
+     }
+   };
+ </script>
 <main id="content" class="content" role="main">
-    <div class="main-inner">
-
-        <div id="posts" class="posts-expand">
-
-
-            <div class="tag-cloud">
-                <div class="tag-cloud-title">
-                    Total {{ tag_list|length }} Tags
-                </div>
-                <div class="tag-cloud-tags">
-
-                    {% for tag in tag_list %}
-                    <a href="{% url 'blog:tag' tag.title %}" style="font-size:{{tag.font_size}}px; color:{{tag.color}}">{{tag.title}}</a>
-                    {% endfor %}
-
-                </div>
-            </div>
-
-
-        </div>
-
-
+    <div id="myCanvasContainer">
+     <canvas width="500" height="500" id="myCanvas" >
+      <p>Anything in here will be replaced on browsers that support the canvas element</p>
+     </canvas>
+    </div>
+    <div id="tags">
+      <ul>
+        {% for tag in tag_list %}
+        <li><a href="{% url 'blog:tag' tag.title %}">{{tag.title}}</a></li>
+        {% endfor %}
+      </ul>
     </div>
 </main>
-
 {% endblock %}
