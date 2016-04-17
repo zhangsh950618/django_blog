@@ -22,5 +22,4 @@ urlpatterns = patterns('',
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'404', TemplateView.as_view(template_name="404.html")),
                        url(r'^rss/', LatestPosts(), name='feeds'),
-                       url(r'^baidu_verify_2sFNvhPJ3z.html$', TemplateView.as_view(template_name="baidu_verify_2sFNvhPJ3z.html"), name='baidu_verify'),
                        )
