@@ -5,8 +5,6 @@
 {% block body_class %} home-template {% endblock %}
 {% load staticfiles %}
 {% block head %}
-
-
 <header class="main-header tag-head " style="background-image: url(http://7xt1y0.com2.z0.glb.clouddn.com/home-bg.jpg)">
     <nav class="main-nav overlay clearfix">
         <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
@@ -20,25 +18,22 @@
         </div>
     </div>
 </header>
-
-
 {% endblock %}
-
-
 {% block body %}
 <script src="http://7xt1y0.com2.z0.glb.clouddn.com/tagcanvas.min.js"></script>
 <script type="text/javascript">
    window.onload = function() {
-      TagCanvas.textColour = '#00f'
+      TagCanvas.textFont = 'Merriweather';
+      TagCanvas.textColour = '#FF4500'
       TagCanvas.textHeight = 25;
       TagCanvas.initial = [0.3,-0.3];
       TagCanvas.decel = 0.98;
       TagCanvas.shadow = '#ccf';
       TagCanvas.clickToFront = 600;
-      TagCanvas.fadeIn = 1000;
+      TagCanvas.fadeIn = 2000;
       TagCanvas.outlineMethod = 'block';
       TagCanvas.outlineColour = '#acf';
-      TagCanvas.maxSpeed = 0.03;
+      TagCanvas.maxSpeed = 0.06;
       TagCanvas.minBrightness = 0.2;
      try {
        TagCanvas.Start('myCanvas','tags');
@@ -49,7 +44,7 @@
    };
  </script>
 <main id="content" class="content" role="main">
-    <div id="myCanvasContainer">
+    <div id="myCanvasContainer" style="width:500px;margin:0 auto;">
      <canvas width="500" height="500" id="myCanvas" >
       <p>Anything in here will be replaced on browsers that support the canvas element</p>
       <div id="tags">
