@@ -71,7 +71,7 @@ DATABASES = {
         'NAME': 'blog',
         'USER': 'zsh',
         'PASSWORD': '123',
-        'HOST': '',
+        'HOST': '127.0.0.1',
         'PORT': '',
     }
 }
