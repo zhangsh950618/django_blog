@@ -10,9 +10,9 @@
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
-            <h1 class="page-title">{{tag_title |default:"Life is Short"}}</h1>
+            <h1 class="page-title">{{tag_title |default:"Never say Die"}}</h1>
             <h2 class="page-description">
-                    {{tag_description|default:" You need something,not just Python"}}
+                    {{tag_description|default:" it's wonderful to have a beginner's mind"}}
             </h2>
         </div>
     </div>
@@ -40,7 +40,6 @@
     {% if is_paginated %}
     <nav class="pagination" role="navigation">
         <span class="page-number">Page {{ page_obj.number }} of  {{ page_obj.paginator.num_pages }}</span>
-
         {% if page_obj.has_previous %}
         <a class="newer-posts" href="/?page={{page_obj.previous_page_number}}">← Newer Posts</a>
         {% endif %}
@@ -50,4 +49,6 @@
     </nav>
     {% endif %}
 </main>
+
+
 {% endblock %}

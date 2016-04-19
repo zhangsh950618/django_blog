@@ -84,21 +84,6 @@ class BlogDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(BlogDetailView, self).get_context_data(**kwargs)
         current_post = context.get("object")
-
-        # 随机文章
-        count = Blog.objects.filter(status='p', is_public=True).count()
-        randint = random.randint(0, count)
-        try:
-            random_post = Blog.objects.filter(status='p', is_public=True)[randint:randint + 1][0]
-        except IndexError:
-            random_post = None
-        try:
-            next_post = Blog.objects.filter(pk__lt=current_post.id).order_by('-pk')[0]
-        except IndexError:
-            next_post = None
-
-        context['next_post'] = next_post
-        context['random_post'] = random_post
         return context
 
 
