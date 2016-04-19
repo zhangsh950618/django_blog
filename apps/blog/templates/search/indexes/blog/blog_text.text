@@ -1,0 +1,10 @@
+{{ object.title }}
+{{ object.link }}
+{{ object.snippet }}
+{{ object.content }}
+{{ object.add_time }}
+{{ object.publish_time }}
+{{ object.update_time }}
+{{ object.status }}
+{{ object.tags }}
+{{ object.author }}

@@ -54,7 +54,7 @@ class BlogListView(ListView):
         }
         if 'tag_name' in self.kwargs:
             query_condition['tags__title'] = self.kwargs['tag_name']
-        return Blog.objects.filter(**query_condition).order_by('-publish_time')
+        return Blog.objects.filter(**query_condition).order_by('-is_top','-publish_time')
 
     def get_context_data(self, **kwargs):
         context = super(BlogListView, self).get_context_data(**kwargs)
