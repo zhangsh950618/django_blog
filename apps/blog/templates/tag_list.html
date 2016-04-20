@@ -19,6 +19,11 @@
 </header>
 {% endblock %}
 {% block body %}
+<style>
+canvas{
+  px;
+}
+</style>
 <script src="http://7xt1y0.com2.z0.glb.clouddn.com/tagcanvas.min.js"></script>
 <script type="text/javascript">
    window.onload = function() {
@@ -42,18 +47,71 @@
      }
    };
  </script>
-<main id="content" class="content" role="main">
-    <div id="myCanvasContainer" style="width:600px;margin:0 auto;">
-     <canvas width="600" height="600" id="myCanvas" >
-      <p>Anything in here will be replaced on browsers that support the canvas element</p>
-      <div id="tags">
-        <ul>
-          {% for tag in tag_list %}
-          <li><a href="{% url 'blog:tag' tag.title %}">{{tag.title}}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-     </canvas>
-    </div>
-</main>
+ <style>
+     body {
+         margin: 0;
+         padding: 0;
+         text-align: center;
+         width: 100%;
+
+     }
+     .container {
+         margin: 0;
+         padding: 0;
+         height: 100%;
+     }
+
+     #myCanvas {
+         display: block;
+         padding: 0;
+         margin: 0 auto;
+
+     }
+
+     @media(max-width:1200px) {
+         .container {
+             margin: 0 50px;
+         }
+         #myCanvas {
+             width: 100%;
+             height: auto;
+         }
+     }
+
+     </style>
+     <div class="container">
+  <canvas   id="myCanvas" width=500 height=500 >
+   <p>Anything in here will be replaced on browsers that support the canvas element</p>
+   <div id="tags">
+     <ul>
+
+       <li><a href="/blog/tag/Markdown">Markdown</a></li>
+
+       <li><a href="/blog/tag/Django">Django</a></li>
+
+       <li><a href="/blog/tag/ACM">ACM</a></li>
+
+       <li><a href="/blog/tag/Python">Python</a></li>
+
+       <li><a href="/blog/tag/Flask">Flask</a></li>
+
+       <li><a href="/blog/tag/Nginx">Nginx</a></li>
+
+       <li><a href="/blog/tag/Uwsgi">Uwsgi</a></li>
+
+       <li><a href="/blog/tag/Ubuntu">Ubuntu</a></li>
+
+       <li><a href="/blog/tag/Algorithm">Algorithm</a></li>
+
+       <li><a href="/blog/tag/Tornado">Tornado</a></li>
+
+       <li><a href="/blog/tag/Test">Test</a></li>
+
+       <li><a href="/blog/tag/STL">STL</a></li>
+
+     </ul>
+   </div>
+  </canvas>
+</div>
+
 {% endblock %}
