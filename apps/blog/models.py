@@ -24,13 +24,15 @@ class Blog(models.Model):
     add_time = models.DateTimeField('创建时间', auto_now_add=True)
     publish_time = models.DateTimeField('发表时间', null=True)
     update_time = models.DateTimeField('修改时间')
-    status = models.CharField('状态', max_length=1, choices=STATUS_CHOICES, default=STATUS_CHOICES[0][0])
+    status = models.CharField(
+        '状态', max_length=1, choices=STATUS_CHOICES, default=STATUS_CHOICES[0][0])
 
     is_public = models.BooleanField('公开', default=True)
     is_top = models.BooleanField('置顶', default=False)
     access_count = models.IntegerField('浏览量', default=1, editable=False)
     category = models.ForeignKey('Category', verbose_name='所属分类')
-    tags = models.ManyToManyField('Tag', verbose_name='标签集合', null=True, blank=True)
+    tags = models.ManyToManyField(
+        'Tag', verbose_name='标签集合', null=True, blank=True)
     tags.help_text = '标签'
     author = models.ForeignKey(User, verbose_name='作者')
 

@@ -26,8 +26,10 @@ class TagListView(ListView):
                 tag.blog_count = blog_count
                 tag_list_have_blog.append(tag)
 
-        max_count = max(tag_list_have_blog, key=lambda tag: tag.blog_count).blog_count
-        min_count = min(tag_list_have_blog, key=lambda tag: tag.blog_count).blog_count
+        max_count = max(tag_list_have_blog,
+                        key=lambda tag: tag.blog_count).blog_count
+        min_count = min(tag_list_have_blog,
+                        key=lambda tag: tag.blog_count).blog_count
 
         tag_cloud = TagCloud(min_count, max_count)
 
@@ -54,7 +56,7 @@ class BlogListView(ListView):
         }
         if 'tag_name' in self.kwargs:
             query_condition['tags__title'] = self.kwargs['tag_name']
-        return Blog.objects.filter(**query_condition).order_by('-is_top','-publish_time')
+        return Blog.objects.filter(**query_condition).order_by('-is_top', '-publish_time')
 
     def get_context_data(self, **kwargs):
         context = super(BlogListView, self).get_context_data(**kwargs)
@@ -95,7 +97,8 @@ class LatestPosts(Feed):
     link = "/"
 
     def items(self):
-        blogs = Blog.objects.filter(status='p', is_public=True).all().order_by('-publish_time')[:10]
+        blogs = Blog.objects.filter(
+            status='p', is_public=True).all().order_by('-publish_time')[:10]
         return blogs
 
     def item_title(self, item):

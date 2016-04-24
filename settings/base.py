@@ -52,14 +52,13 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-#STATICFILES_DIRS = (
+# STATICFILES_DIRS = (
 #    os.path.join(BASE_DIR, "collectstatic"),
 #)
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'compressor.finders.CompressorFinder',
 )
 ROOT_URLCONF = 'urls'
 
@@ -85,7 +84,7 @@ USE_L10N = True
 USE_TZ = False
 
 
-GOOGLE_ANALYTICS_ID='you google analytics id'
+GOOGLE_ANALYTICS_ID = 'you google analytics id'
 
 SIMPLEMDE_OPTIONS = {
     'placeholder': 'haha',

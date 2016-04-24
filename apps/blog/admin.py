@@ -109,10 +109,6 @@ class BlogAdmin(admin.ModelAdmin):
         return super(BlogAdmin, self).change_view(request, object_id, form_url, more_context)
 
 
-
-
-
-
 class TagAdmin(admin.ModelAdmin):
     pass
 

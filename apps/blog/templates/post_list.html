@@ -1,12 +1,8 @@
-{% extends "base.html" %}
-{% block description %}张少华{% endblock%}
-{% block title %}张少华的博客{% endblock %}
-{% block body_class %} home-template {% endblock %}
-{% block head %}
+{% extends "base.html" %} {% block description %}张少华{% endblock%} {% block title %}张少华的博客{% endblock %} {% block body_class %} home-template {% endblock %} {% block head %}
 <header class="main-header tag-head " style="background-image: url(http://7xt1y0.com2.z0.glb.clouddn.com/home-bg.jpg)">
     <nav class="main-nav overlay clearfix">
 
-            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
@@ -17,8 +13,7 @@
         </div>
     </div>
 </header>
-{% endblock %}
-{% block body %}
+{% endblock %} {% block body %}
 <main id="content" class="content" role="main">
     {% for blog in blog_list %}
 
@@ -35,17 +30,11 @@
         </footer>
     </article>
 
-    {% endfor %}
-
-    {% if is_paginated %}
+    {% endfor %} {% if is_paginated %}
     <nav class="pagination" role="navigation">
-        <span class="page-number">Page {{ page_obj.number }} of  {{ page_obj.paginator.num_pages }}</span>
-        {% if page_obj.has_previous %}
-        <a class="newer-posts" href="/?page={{page_obj.previous_page_number}}">← Newer Posts</a>
-        {% endif %}
-        {% if page_obj.has_next %}
-        <a class="older-posts" href="/?page={{ page_obj.next_page_number }}">Older Posts →</a>
-        {% endif %}
+        <span class="page-number">Page {{ page_obj.number }} of  {{ page_obj.paginator.num_pages }}</span> {% if page_obj.has_previous %}
+        <a class="newer-posts" href="/?page={{page_obj.previous_page_number}}">← Newer Posts</a> {% endif %} {% if page_obj.has_next %}
+        <a class="older-posts" href="/?page={{ page_obj.next_page_number }}">Older Posts →</a> {% endif %}
     </nav>
     {% endif %}
 </main>

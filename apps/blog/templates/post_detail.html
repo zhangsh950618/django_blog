@@ -1,33 +1,29 @@
-{% extends "base.html" %}
-{% block description %}{{blog.snippet | truncatewords:50}}{%endblock%}
-{% block title %}{{blog.title}}{% endblock %}
-{% block body_class %} post-template {% endblock %}
-{% block head %}
-{% load myapp_markup %}
+{% extends "base.html" %} {% block description %}{{blog.snippet | truncatewords:50}}{%endblock%} {% block title %}{{blog.title}}{% endblock %} {% block body_class %} post-template {% endblock %} {% block head %} {% load myapp_markup %}
 <header class="main-header post-head no-cover">
     {% include "widget/main-nav.html" %}
 </header>
-{% endblock %}
-{% block body %}
+{% endblock %} {% block body %}
 <style>
-#share a.bds_qzone{
-  height: 45px;
-  width: 15px;
-  background: url(http://7xt1y0.com1.z0.glb.clouddn.com/icon%2FQQ.svg);
-  background-repeat: no-repeat;
- }
- #share a.bds_tsina{
-   height: 45px;
-   width: 15px;
-   background: url(http://7xt1y0.com1.z0.glb.clouddn.com/icon%2Fweibo.svg);
-   background-repeat: no-repeat;
-  }
-  #share a.bds_weixin{
-    height: 45px;
-    width: 15px;
-    background: url(http://7xt1y0.com1.z0.glb.clouddn.com/icon%2Fweixin.svg);
-    background-repeat: no-repeat;
-   }
+    #share a.bds_qzone {
+        height: 45px;
+        width: 15px;
+        background: url(http://7xt1y0.com1.z0.glb.clouddn.com/icon%2FQQ.svg);
+        background-repeat: no-repeat;
+    }
+
+    #share a.bds_tsina {
+        height: 45px;
+        width: 15px;
+        background: url(http://7xt1y0.com1.z0.glb.clouddn.com/icon%2Fweibo.svg);
+        background-repeat: no-repeat;
+    }
+
+    #share a.bds_weixin {
+        height: 45px;
+        width: 15px;
+        background: url(http://7xt1y0.com1.z0.glb.clouddn.com/icon%2Fweixin.svg);
+        background-repeat: no-repeat;
+    }
 </style>
 <main class="content" role="main">
     <article class="post">
@@ -36,21 +32,21 @@
             <section class="post-meta">
                 <time class="post-date" datetime="{{blog.add_time|date:'b d, Y'}}">{{blog.add_time|date:"b d, Y"}}
                 </time>
-                {% if blog.tags %}on
-                {% for tag in blog.tags.all %}
-                <a href="{%url 'blog:tag' tag%}">{{tag }}</a>
-                {% endfor %}
-                {% endif %}
+                {% if blog.tags %}on {% for tag in blog.tags.all %}
+                <a href="{%url 'blog:tag' tag%}">{{tag }}</a> {% endfor %} {% endif %}
             </section>
         </header>
         <section class="post-content">
-            <div id = "markdown-body">{{ blog.content | md1 }}</div>
+            <div id="markdown-body">{{ blog.content | md1 }}</div>
             <div id="share">
-            <div class="bdsharebuttonbox"><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
-          </div>
+                <div class="bdsharebuttonbox">
+                    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+                    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+                    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+                </div>
+            </div>
             <details open="">
-                <summary>原文链接：<a href="{{blog.get_absolute_url}}" rel="author">{{blog.title}}</a>，转发请注明来自<a
-                        href="http://zhangshaohua.cc">张少华的博客</a>！
+                <summary>原文链接：<a href="{{blog.get_absolute_url}}" rel="author">{{blog.title}}</a>，转发请注明来自<a href="http://zhangshaohua.cc">张少华的博客</a>！
 
                 </summary>
             </details>
@@ -63,6 +59,20 @@
         </footer>
     </article>
 </main>
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<script>
+    window._bd_share_config = {
+        "common": {
+            "bdSnsKey": {},
+            "bdText": "",
+            "bdMini": "2",
+            "bdMiniList": false,
+            "bdPic": "",
+            "bdStyle": "1",
+            "bdSize": "24"
+        },
+        "share": {}
+    };
+    with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+</script>
 
 {% endblock %}

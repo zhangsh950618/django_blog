@@ -1,9 +1,4 @@
-{% extends "base.html" %}
-{% block description %}Python Django{% endblock %}
-{% block title %}张少华的博客{% endblock %}
-{% block body_class %} home-template {% endblock %}
-{% load staticfiles %}
-{% block head %}
+{% extends "base.html" %} {% block description %}Python Django{% endblock %} {% block title %}张少华的博客{% endblock %} {% block body_class %} home-template {% endblock %} {% load staticfiles %} {% block head %}
 <header class="main-header tag-head " style="background-image: url(http://7xt1y0.com2.z0.glb.clouddn.com/home-bg.jpg)">
     <nav class="main-nav overlay clearfix">
         <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
@@ -17,79 +12,72 @@
         </div>
     </div>
 </header>
-{% endblock %}
-{% block body %}
-<style>
-canvas{
-  px;
-}
-</style>
+{% endblock %} {% block body %}
+
 <script src="http://7xt1y0.com2.z0.glb.clouddn.com/tagcanvas.min.js"></script>
 <script type="text/javascript">
-   window.onload = function() {
-      TagCanvas.textFont = 'Merriweather';
-      TagCanvas.textColour = '#FF4500'
-      TagCanvas.textHeight = 25;
-      TagCanvas.initial = [0.3,-0.3];
-      TagCanvas.decel = 0.98;
-      TagCanvas.shadow = '#ccf';
-      TagCanvas.clickToFront = 600;
-      TagCanvas.fadeIn = 2000;
-      TagCanvas.outlineMethod = 'block';
-      TagCanvas.outlineColour = '#acf';
-      TagCanvas.maxSpeed = 0.04;
-      TagCanvas.minBrightness = 0.2;
-     try {
-       TagCanvas.Start('myCanvas','tags');
-     } catch(e) {
-       // something went wrong, hide the canvas container
-       document.getElementById('myCanvasContainer').style.display = 'none';
-     }
-   };
- </script>
- <style>
-     body {
-         margin: 0;
-         padding: 0;
-         text-align: center;
-         width: 100%;
+    window.onload = function() {
+        TagCanvas.textFont = 'Merriweather';
+        TagCanvas.textColour = '#FF4500'
+        TagCanvas.textHeight = 25;
+        TagCanvas.initial = [0.3, -0.3];
+        TagCanvas.decel = 0.98;
+        TagCanvas.shadow = '#ccf';
+        TagCanvas.clickToFront = 600;
+        TagCanvas.fadeIn = 2000;
+        TagCanvas.outlineMethod = 'block';
+        TagCanvas.outlineColour = '#acf';
+        TagCanvas.maxSpeed = 0.04;
+        TagCanvas.minBrightness = 0.2;
+        try {
+            TagCanvas.Start('myCanvas', 'tags');
+        } catch (e) {
+            // something went wrong, hide the canvas container
+            document.getElementById('myCanvasContainer').style.display = 'none';
+        }
+    };
+</script>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        width: 100%;
+    }
 
-     }
-     .container {
-         margin: 0;
-         padding: 0;
-         height: 100%;
-     }
+    .container {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
 
-     #myCanvas {
-         display: block;
-         padding: 0;
-         margin: 0 auto;
+    #myCanvas {
+        display: block;
+        padding: 0;
+        margin: 0 auto;
+    }
 
-     }
-
-     @media(max-width:1200px) {
-         .container {
-             margin: 0 50px;
-         }
-         #myCanvas {
-             width: 100%;
-             height: auto;
-         }
-     }
-
-     </style>
-     <div class="container">
-  <canvas   id="myCanvas" width=500 height=500 >
-   <p>Anything in here will be replaced on browsers that support the canvas element</p>
-   <div id="tags">
-     <ul>
-       {% for tag in tag_list %}
-       <li><a href="/blog/tag/{{tag.title}}">{{tag.title}}</a></li>
-       {% endfor %}
-     </ul>
-   </div>
-  </canvas>
+    @media(max-width:1200px) {
+        .container {
+            margin: 0 50px;
+        }
+        #myCanvas {
+            width: 100%;
+            height: auto;
+        }
+    }
+</style>
+<div class="container">
+    <canvas id="myCanvas" width=500 height=500>
+        <p>Anything in here will be replaced on browsers that support the canvas element</p>
+        <div id="tags">
+            <ul>
+                {% for tag in tag_list %}
+                <li><a href="/blog/tag/{{tag.title}}">{{tag.title}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </canvas>
 </div>
 
 {% endblock %}
