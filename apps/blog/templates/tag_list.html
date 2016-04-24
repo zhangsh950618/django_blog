@@ -84,31 +84,9 @@ canvas{
    <p>Anything in here will be replaced on browsers that support the canvas element</p>
    <div id="tags">
      <ul>
-
-       <li><a href="/blog/tag/Markdown">Markdown</a></li>
-
-       <li><a href="/blog/tag/Django">Django</a></li>
-
-       <li><a href="/blog/tag/ACM">ACM</a></li>
-
-       <li><a href="/blog/tag/Python">Python</a></li>
-
-       <li><a href="/blog/tag/Flask">Flask</a></li>
-
-       <li><a href="/blog/tag/Nginx">Nginx</a></li>
-
-       <li><a href="/blog/tag/Uwsgi">Uwsgi</a></li>
-
-       <li><a href="/blog/tag/Ubuntu">Ubuntu</a></li>
-
-       <li><a href="/blog/tag/Algorithm">Algorithm</a></li>
-
-       <li><a href="/blog/tag/Tornado">Tornado</a></li>
-
-       <li><a href="/blog/tag/Test">Test</a></li>
-
-       <li><a href="/blog/tag/STL">STL</a></li>
-
+       {% for tag in tag_list %}
+       <li><a href="/blog/tag/{{tag.title}}">{{tag.title}}</a></li>
+       {% endfor %}
      </ul>
    </div>
   </canvas>
